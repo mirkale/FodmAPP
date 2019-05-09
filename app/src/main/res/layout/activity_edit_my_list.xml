@@ -10,8 +10,6 @@
         android:id="@+id/editMyListTextView"
         android:layout_width="208dp"
         android:layout_height="74dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="34dp"
         android:text="FODMAP"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -21,71 +19,114 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addToMyListButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="141dp"
-        android:onClick="addToMyListButtonPressed"
-        android:text="LISÄÄ"
-        app:layout_constraintStart_toStartOf="@+id/editMyListTextView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/deleteFromMyListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="deleteFromMyListButtonPressed"
         android:text="POISTA"
-        app:layout_constraintBaseline_toBaselineOf="@+id/addToMyListButton"
-        app:layout_constraintEnd_toEndOf="@+id/editMyListTextView" />
+        app:layout_constraintBottom_toTopOf="@+id/backToSearchEditActivityButton"
+        app:layout_constraintStart_toStartOf="@+id/backToSearchEditActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/editMyListTextView" />
 
     <Button
         android:id="@+id/backToSearchEditActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="5dp"
         android:onClick="backToSearch"
         android:text="HAKU"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/deleteFromMyListButton" />
 
     <EditText
         android:id="@+id/editActivityEditTextSetNote"
-        android:layout_width="wrap_content"
+        android:layout_width="247dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="18dp"
         android:ems="10"
-        android:hint="Muistiinpano"
+        android:hint="Lisää merkintä"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/saveNoteEditActivityButton"
+        app:layout_constraintBottom_toTopOf="@+id/notesTextViewEditActivity"
         app:layout_constraintEnd_toStartOf="@+id/saveNoteEditActivityButton"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <TextView
         android:id="@+id/notesTextViewEditActivity"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="31dp"
-        android:text="muistiinpano"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editActivityEditTextSetNote" />
+        app:layout_constraintTop_toBottomOf="@+id/saveNoteEditActivityButton" />
 
     <Button
         android:id="@+id/saveNoteEditActivityButton"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="314dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="addNote"
+        android:text="ok"
+        app:layout_constraintBottom_toTopOf="@+id/notesTextViewEditActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editActivityEditTextSetNote"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:onClick="addNote"
-        android:text="LISÄÄ"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="155dp"
+        android:background="@color/colorAccent"
+        android:onClick="addRedColorButtonPressed"
+        android:text="EI SOVI"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMyListTextView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/colorPrimary"
+        android:onClick="addYellowColorButtonPressed"
+        android:text="EPÄVARMA"
+        app:layout_constraintBottom_toTopOf="@+id/saveNoteEditActivityButton"
+        app:layout_constraintEnd_toEndOf="@+id/editActivityEditTextSetNote" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="46dp"
+        android:background="@android:color/holo_green_light"
+        android:onClick="addGreenColorButtonPressed"
+        android:text="SOPII"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editActivityEditTextSetNote"
-        app:layout_constraintTop_toBottomOf="@+id/backToSearchEditActivityButton" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/editMyListTextView" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:onClick="deleteNote"
+        android:text="POISTA MERKINTÄ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesTextViewEditActivity" />
 
 </android.support.constraint.ConstraintLayout>

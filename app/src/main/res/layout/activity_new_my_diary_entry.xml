@@ -7,7 +7,7 @@
     tools:context=".NewMyDiaryEntry">
 
     <EditText
-        android:id="@+id/setDiaryEntryTopicPlainText"
+        android:id="@+id/setDiaryEntryEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
@@ -26,11 +26,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="19dp"
-        android:text="PÄIVÄKIRJA MERKINTÄ"
         app:layout_constraintBottom_toTopOf="@+id/saveDiaryEntryButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setDiaryEntryTopicPlainText" />
+        app:layout_constraintTop_toBottomOf="@+id/setDiaryEntryEditText" />
 
     <Button
         android:id="@+id/saveDiaryEntryButton"
@@ -67,7 +66,7 @@
         android:layout_marginBottom="17dp"
         android:onClick="toMain"
         android:text="ETUSIVU"
-        app:layout_constraintBottom_toTopOf="@+id/setDiaryEntryTopicPlainText"
+        app:layout_constraintBottom_toTopOf="@+id/setDiaryEntryEditText"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -90,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="toMyList"
-        android:text="OMA"
+        android:text="OMA LISTA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button7"
         app:layout_constraintTop_toTopOf="parent" />

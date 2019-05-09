@@ -11,26 +11,24 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="29dp"
         android:layout_marginEnd="70dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="379dp"
         android:text="FODMAP"
         android:textAlignment="center"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/addToMyListButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/backToSearchButton" />
 
     <Button
         android:id="@+id/addToMyListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="305dp"
         android:onClick="addToMyListButtonPressed"
         android:text="LISÄÄ"
-        app:layout_constraintBottom_toTopOf="@+id/backToSearchButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewAddItemToMyListActivity" />
@@ -39,21 +37,27 @@
         android:id="@+id/backToSearchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="55dp"
         android:onClick="backToSearch"
         android:text="HAKU"
-        app:layout_constraintBottom_toTopOf="@+id/backToFrontPageButton"
-        app:layout_constraintStart_toStartOf="@+id/addToMyListButton"
-        app:layout_constraintTop_toBottomOf="@+id/addToMyListButton" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewAddItemToMyListActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/backToFrontPageButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/backToFrontPageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="266dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="55dp"
         android:onClick="toFrontPage"
         android:text="ETUSIVU"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/backToSearchButton"
-        app:layout_constraintTop_toBottomOf="@+id/backToSearchButton" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewAddItemToMyListActivity"
+        app:layout_constraintEnd_toStartOf="@+id/backToSearchButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

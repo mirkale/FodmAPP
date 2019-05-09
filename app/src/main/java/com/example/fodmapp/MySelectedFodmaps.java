@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import java.util.ArrayList;
 
 public class MySelectedFodmaps {
-    public static final String PREFS_NAME = "BLABLA";
+    public static final String PREFS_NAME = "TASKS";
     private static final MySelectedFodmaps ourInstance = new MySelectedFodmaps();
 
 
@@ -26,17 +26,7 @@ public class MySelectedFodmaps {
     public  void deleteFromMyList(String name){
         selectedItemsArrayList.remove(name);
     }
-    /*public static SharedPreferences getPrefs(Context context){
-        return  context.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
-    }
-    public static void insertData(Context context,String key,String value){
-        SharedPreferences.Editor editor=getPrefs(context).edit();
-        editor.putString(key,value);
-        editor.commit();
-    }
-    public static String retrieveData(Context context,String key){
-        return getPrefs(context).getString(key, "nodatafound");
-    }*/
+
     public ArrayList<String> getMySelectedFodmapsArrayList(){
 
         return selectedItemsArrayList;

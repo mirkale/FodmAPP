@@ -3,7 +3,7 @@ package com.example.fodmapp;
 import java.util.ArrayList;
 
 class MyDiaryEntriesList {
-    public static final String PREF_DIARY = "PrefDiaryEntries";
+    public static final String PREF_DIARY = "DIARY";
     private static final MyDiaryEntriesList ourInstance = new MyDiaryEntriesList();
     private ArrayList<String> diaryEntries;
 

@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GuideActivity">
+    tools:context=".RecipeViewActivity">
 
     <Button
-        android:id="@+id/toMainButton"
+        android:id="@+id/backToRecipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:onClick="toMain"
-        android:text="ETUSIVU"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:onClick="backToRecipes"
+        android:text="RESEPTIHAKU"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -30,11 +30,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toMainButton">
+        app:layout_constraintTop_toBottomOf="@+id/backToRecipes">
 
         <TextView
-            android:id="@+id/guideAcitivityTextView"
+            android:id="@+id/textViewForRecipes"
             android:layout_width="match_parent"
-            android:layout_height="628dp" />
+            android:layout_height="535dp"
+            android:text="TextView" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

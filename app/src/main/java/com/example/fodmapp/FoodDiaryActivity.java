@@ -22,7 +22,6 @@ public class FoodDiaryActivity extends AppCompatActivity {
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(FoodDiaryActivity.this,
                 android.R.layout.simple_list_item_1,
-
                 MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList()
         );
 
@@ -39,9 +38,7 @@ public class FoodDiaryActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * opens new activity where it is possible to add new entry to users diary
-     */
+    //opens new activity where it is possible to add new entry to users diary
     public void newEntryButtonPressed(View v){
         Intent openNewMyDiaryEntry = new Intent(this, NewMyDiaryEntry.class);
         startActivity(openNewMyDiaryEntry);

@@ -3,6 +3,7 @@ package com.example.fodmapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,11 +22,9 @@ import android.widget.Toast;
 public class SearchActivity extends AppCompatActivity {
 
     public static final String EXTRA_FROM_SEARCH_TO_EDIT = "keySearchList";
-    //SearchView allFodmapsSearchView;
     ListView allFodmapsListView;
     EditText addToOwnList;
     SearchView fodmapSearchView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class SearchActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 FodmapList.getInstance().getAllFodmapsArrayList()
         );
-
         allFodmapsListView.setAdapter(arrayAdapter);
 
         fodmapSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -49,32 +47,30 @@ public class SearchActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 if(FodmapList.getInstance().getAllFodmapsArrayList().contains(query)){
                     arrayAdapter.getFilter().filter(query);
-                    Intent openEditActivity = new Intent(SearchActivity.this, EditMyListActivity.class);
-
-                    openEditActivity.putExtra(EXTRA_FROM_SEARCH_TO_EDIT, query);
-                    startActivity(openEditActivity);
+                    Intent openAddActivity = new Intent(SearchActivity.this, AddItemToMyListActivity.class);
+                    openAddActivity.putExtra(EXTRA_FROM_SEARCH_TO_EDIT, query);
+                    startActivity(openAddActivity);
                 }else {
-                    Toast.makeText(SearchActivity.this, "Ei löydy", Toast.LENGTH_SHORT).show();
-                }
-
+                Toast toast = Toast.makeText(SearchActivity.this, "Ei löydy\nLisää itse!", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.show();
+                //jos listasta ei haulla löydy, lähettää toast-viestin
+            }
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
         });
 
-        //when an item is clicked on the list EditActivity opens. there it is possible to add the item to your own list,
-        //change the color etc...
+        //when an item is clicked on the list AddActivity opens. there it is possible to add the item to your own list,
         allFodmapsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent openEditActivity = new Intent(SearchActivity.this, EditMyListActivity.class);
-
-                openEditActivity.putExtra(SearchActivity.EXTRA_FROM_SEARCH_TO_EDIT, i);
-                startActivity(openEditActivity);
+                Intent openAddActivity = new Intent(SearchActivity.this, AddItemToMyListActivity.class);
+                openAddActivity.putExtra(SearchActivity.EXTRA_FROM_SEARCH_TO_EDIT, i);
+                startActivity(openAddActivity);
             }
         });
 
@@ -85,15 +81,17 @@ public class SearchActivity extends AppCompatActivity {
      * clicking the item edit window opens where it is possible to add the item to users own list
      *
      */
-    public void addToFodMapList(View v){
-        Intent openEditMyListActivity = new Intent(this, EditMyListActivity.class);
+    public void addToFodmapList(View v){
+        //retrieves the item user wants to add to the main list and saves it to the variable addNewFodmap
         addToOwnList = (EditText) findViewById(R.id.addToOwnListEditText);
         String addNewFodmap = addToOwnList.getText().toString();
-        openEditMyListActivity.putExtra(EXTRA_FROM_SEARCH_TO_EDIT, addNewFodmap);
-        startActivity(openEditMyListActivity);
+
+        Intent openAddActivity = new Intent(this, AddItemToMyListActivity.class);
+        openAddActivity.putExtra(EXTRA_FROM_SEARCH_TO_EDIT, addNewFodmap);
+        startActivity(openAddActivity);
 
     }
-    //takes user back to main activity
+    //below buttons taking user to main, diary and own list
     public void toMain(View v){
         Intent openMainActivity = new Intent(this, MainActivity.class);
         startActivity(openMainActivity);

@@ -16,22 +16,10 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA = "KeyMain";
     public static boolean openOnFirstTime;
 
-    private Button mainSearchButton;
-    private Button mainMyListButton;
-    private Button mainMyDiaryButton;
-    private Button mainGuideButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //buttons on first page
-
-        mainSearchButton = (Button) findViewById(R.id.searchButton);
-        mainMyListButton = (Button) findViewById(R.id.myListButton);
-        mainMyDiaryButton = (Button) findViewById(R.id.myDiaryButton);
-        mainGuideButton = (Button) findViewById(R.id.guideButton);
 
         /**
          * 1. serialized object = mySelected list can be saved also in a file and can be retrieved from there (deserialize)
@@ -62,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences prefEntry = getSharedPreferences(MyDiaryEntriesList.PREF_DIARY, Context.MODE_PRIVATE);
 
             try {
-                ArrayList<String> myDiaryEntries = (ArrayList<String>) ObjectSerializer.deserialize(prefEntry.getString("TASKS", ObjectSerializer.serialize(new ArrayList<String>())));
+                ArrayList<String> myDiaryEntries = (ArrayList<String>) ObjectSerializer.deserialize(prefEntry.getString("DIARY", ObjectSerializer.serialize(new ArrayList<String>())));
                 //Log.i("Fodmap", myDiaryEntries.toString());
                 for(String myEntries: myDiaryEntries){
                     MyDiaryEntriesList.getInstance().addNewEntryToMyDiary(myEntries);
@@ -76,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences prefNotes = getSharedPreferences(MySelectedFodmapsNotes.PREFS_NOTES, Context.MODE_PRIVATE);
 
             try {
-                ArrayList<String> myBadFodmapNotes = (ArrayList<String>) ObjectSerializer.deserialize(prefNotes.getString("TASKS", ObjectSerializer.serialize(new ArrayList<String>())));
+                ArrayList<String> myBadFodmapNotes = (ArrayList<String>) ObjectSerializer.deserialize(prefNotes.getString("NOTES", ObjectSerializer.serialize(new ArrayList<String>())));
                 for(String myNotes: myBadFodmapNotes){
                     MySelectedFodmapsNotes.getInstance().addToMyListOfNotes(myNotes);
                 }
@@ -89,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences prefColors = getSharedPreferences(MySelectedFodmapsColors.PREFS_COLORS, Context.MODE_PRIVATE);
 
             try {
-                ArrayList<String> myBadFodmapColors = (ArrayList<String>) ObjectSerializer.deserialize(prefColors.getString("TASKS", ObjectSerializer.serialize(new ArrayList<String>())));
+                ArrayList<String> myBadFodmapColors = (ArrayList<String>) ObjectSerializer.deserialize(prefColors.getString("COLORS", ObjectSerializer.serialize(new ArrayList<String>())));
                 for(String myColors: myBadFodmapColors){
                     MySelectedFodmapsColors.getInstance().addToMyListOfColors(myColors);
                 }
@@ -119,9 +107,19 @@ public class MainActivity extends AppCompatActivity {
         Intent openMyDiary = new Intent(this, FoodDiaryActivity.class);
         startActivity(openMyDiary);
     }
+    public void recipesButtonPressed(View v){
+        Intent openRecipes = new Intent(this, RecipesActivity.class);
+        startActivity(openRecipes);
+    }
+    //opens an ibs info
+    public void ibsButtonPressed(View v){
+        Intent openIbs = new Intent(this, IbsActivity.class);
+        startActivity(openIbs);
+    }
     //opens a guide how to use this app
     public void guideButtonPressed(View v){
         Intent openGuide = new Intent(this, GuideActivity.class);
         startActivity(openGuide);
     }
+
 }

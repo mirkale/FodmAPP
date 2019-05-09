@@ -24,7 +24,7 @@ public class NewMyDiaryEntry extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy ");
         Date date = new Date();
 
-        ((EditText) findViewById(R.id.setDiaryEntryTopicPlainText)).setText(dateFormat.format(date));
+        ((EditText) findViewById(R.id.setDiaryEntryEditText)).setText(dateFormat.format(date));
 
 
         Bundle b = getIntent().getExtras();
@@ -32,11 +32,11 @@ public class NewMyDiaryEntry extends AppCompatActivity {
             int i = b.getInt(FoodDiaryActivity.MESSAGE_FROM_MY_DIARY, 0);
 
             ((TextView) findViewById(R.id.setDiaryEntryTextView)).setText(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList(i));
-            ((EditText) findViewById(R.id.setDiaryEntryTopicPlainText)).setText(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList(i));
+            ((EditText) findViewById(R.id.setDiaryEntryEditText)).setText(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList(i));
         }
     }
     public void saveAddedDiaryEntry(View v){
-        EditText newDiaryEntry = (EditText) findViewById(R.id.setDiaryEntryTopicPlainText);
+        EditText newDiaryEntry = (EditText) findViewById(R.id.setDiaryEntryEditText);
 
         Bundle b = getIntent().getExtras();
         if(b != null){
@@ -44,50 +44,44 @@ public class NewMyDiaryEntry extends AppCompatActivity {
             String oldEntryInDiary = MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList(i);
             MyDiaryEntriesList.getInstance().deleteEntryFromMyDiary(oldEntryInDiary);
         }
-
         String newEntryInMyDiary = newDiaryEntry.getText().toString();
-
         MyDiaryEntriesList.getInstance().addNewEntryToMyDiary(newEntryInMyDiary);
 
         SharedPreferences prefEntry = getSharedPreferences(MyDiaryEntriesList.PREF_DIARY, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefEntry.edit();
 
         try {
-            editor.putString("TASKS", ObjectSerializer.serialize(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList()));
+            editor.putString("DIARY", ObjectSerializer.serialize(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList()));
         } catch (IOException e) {
             e.printStackTrace();
         }
         editor.commit();
 
         Intent openFoodDiaryActivity = new Intent(this, FoodDiaryActivity.class);
-        openFoodDiaryActivity.putExtra(MainActivity.EXTRA, newEntryInMyDiary);
-
         startActivity(openFoodDiaryActivity);
     }
 
     public void deleteEntryFromMyDiary (View v){
-
         Bundle b = getIntent().getExtras();
-        int i = b.getInt(FoodDiaryActivity.MESSAGE_FROM_MY_DIARY,0);
+        int i = b.getInt(FoodDiaryActivity.MESSAGE_FROM_MY_DIARY, 0);
 
-        EditText newDiaryEntry = (EditText) findViewById(R.id.setDiaryEntryTopicPlainText);
+        EditText newEntry = (EditText) findViewById(R.id.setDiaryEntryEditText);
 
-        String nameOfEntry = MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList(i);
-        MyDiaryEntriesList.getInstance().deleteEntryFromMyDiary(nameOfEntry);
+        String clicked = MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList(i);
+        MyDiaryEntriesList.getInstance().deleteEntryFromMyDiary(clicked);
 
         SharedPreferences prefEntry = getSharedPreferences(MyDiaryEntriesList.PREF_DIARY, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefEntry.edit();
         try {
-            editor.putString("TASKS", ObjectSerializer.serialize(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList()));
+            editor.putString("DIARY", ObjectSerializer.serialize(MyDiaryEntriesList.getInstance().getMyDiaryEntriesArrayList()));
         } catch (IOException e) {
             e.printStackTrace();
         }
         editor.commit();
 
-        Intent openFoodDiaryActivity = new Intent(this, FoodDiaryActivity.class);
-        openFoodDiaryActivity.putExtra(MainActivity.EXTRA, i);
+        Intent openDiary = new Intent(this, FoodDiaryActivity.class);
+        startActivity(openDiary);
 
-        startActivity(openFoodDiaryActivity);
 
     }
     public void toMain(View v){
