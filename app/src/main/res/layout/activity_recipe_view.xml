@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E2E0"
     tools:context=".RecipeViewActivity">
 
     <Button
         android:id="@+id/backToRecipes"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
         android:onClick="backToRecipes"
         android:text="RESEPTIHAKU"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"

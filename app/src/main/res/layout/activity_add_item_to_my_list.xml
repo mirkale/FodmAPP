@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E2E0"
     tools:context=".AddItemToMyListActivity">
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="305dp"
+        android:background="@color/colorPrimary"
         android:onClick="addToMyListButtonPressed"
         android:text="LISÄÄ"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,6 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="55dp"
+        android:background="#BE8AD4"
         android:onClick="backToSearch"
         android:text="HAKU"
         app:layout_constraintBottom_toTopOf="@+id/textViewAddItemToMyListActivity"
@@ -53,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="55dp"
+        android:background="#BE8AD4"
         android:onClick="toFrontPage"
         android:text="ETUSIVU"
         app:layout_constraintBottom_toTopOf="@+id/textViewAddItemToMyListActivity"

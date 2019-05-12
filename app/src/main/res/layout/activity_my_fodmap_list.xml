@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FFE2E2E0"
     android:layout_height="match_parent"
     tools:context=".MyFodmapListActivity">
 
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="16dp"
+        android:background="@color/colorPrimaryDark"
         android:onClick="toFirstPage"
         android:text="ETUSIVU"
         app:layout_constraintEnd_toStartOf="@+id/toSearchOnEditButton"
@@ -24,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="1dp"
+        android:background="#BE8AD4"
         android:onClick="toSearchButton"
         android:text="HAKU"
         app:layout_constraintEnd_toStartOf="@+id/toMyDiaryOnEditButtom"
@@ -36,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
+        android:background="#BE8AD4"
         android:onClick="toMyDiary"
         android:text="PVÄKIRJA"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,9 +51,11 @@
         android:layout_width="0dp"
         android:layout_height="507dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toMainActivityOnEditButton" />
 </android.support.constraint.ConstraintLayout>

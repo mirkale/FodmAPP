@@ -37,7 +37,7 @@ public class AddItemToMyListActivity extends AppCompatActivity {
 
 
         if (MySelectedFodmaps.getInstance().selectedItemsArrayList.contains(fodmapItemSelected)) {
-            ((TextView) findViewById(R.id.editMyListTextView)).setText("Listassasi on jo\n " +  fodmapItemSelected);
+            ((TextView) findViewById(R.id.textViewAddItemToMyListActivity)).setText("Listassasi on jo\n " +  fodmapItemSelected);
         }else {
 
             MySelectedFodmaps.getInstance().addToMyList(fodmapItemSelected);
@@ -77,6 +77,7 @@ public class AddItemToMyListActivity extends AppCompatActivity {
             startActivity(openMySelectedItemsList);
         }
     }
+    //takes user back to search from add activity,
     public void backToSearch(View v){
         Intent openSearchActivity = new Intent(AddItemToMyListActivity.this, SearchActivity.class);
         startActivity(openSearchActivity);

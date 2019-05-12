@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E2E0"
     tools:context=".EditMyListActivity">
 
     <TextView
@@ -22,6 +23,7 @@
         android:id="@+id/deleteFromMyListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:onClick="deleteFromMyListButtonPressed"
         android:text="POISTA"
         app:layout_constraintBottom_toTopOf="@+id/backToSearchEditActivityButton"
@@ -33,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:background="@color/colorPrimary"
         android:onClick="backToSearch"
         android:text="HAKU"
         app:layout_constraintBottom_toTopOf="@+id/button3"
@@ -70,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="314dp"
         android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimary"
         android:onClick="addNote"
         android:text="ok"
         app:layout_constraintBottom_toTopOf="@+id/notesTextViewEditActivity"
@@ -84,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="155dp"
+        android:layout_marginEnd="10dp"
         android:background="@color/colorAccent"
         android:onClick="addRedColorButtonPressed"
         android:text="EI SOVI"
@@ -96,13 +101,15 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="18dp"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/holo_orange_light"
         android:onClick="addYellowColorButtonPressed"
         android:text="EPÄVARMA"
         app:layout_constraintBottom_toTopOf="@+id/saveNoteEditActivityButton"
-        app:layout_constraintEnd_toEndOf="@+id/editActivityEditTextSetNote" />
+        app:layout_constraintEnd_toEndOf="@+id/editActivityEditTextSetNote"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
 
     <Button
         android:id="@+id/button9"
@@ -122,6 +129,7 @@
         android:id="@+id/button10"
         android:layout_width="163dp"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:onClick="deleteNote"
         android:text="POISTA MERKINTÄ"
         app:layout_constraintBottom_toBottomOf="parent"

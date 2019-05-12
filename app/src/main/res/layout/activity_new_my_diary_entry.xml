@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E2E0"
     tools:context=".NewMyDiaryEntry">
 
     <EditText
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="18dp"
+        android:background="@color/colorPrimary"
         android:onClick="saveAddedDiaryEntry"
         android:text="TALLENNA"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="18dp"
+        android:background="@color/colorPrimary"
         android:onClick="deleteEntryFromMyDiary"
         android:text="POISTA"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,6 +67,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="17dp"
+        android:background="@color/colorPrimary"
         android:onClick="toMain"
         android:text="ETUSIVU"
         app:layout_constraintBottom_toTopOf="@+id/setDiaryEntryEditText"
@@ -77,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="10dp"
+        android:background="@color/colorPrimary"
         android:onClick="toDiary"
         android:text="PVÄKIRJA"
         app:layout_constraintEnd_toStartOf="@+id/button8"
@@ -88,6 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
         android:onClick="toMyList"
         android:text="OMA LISTA"
         app:layout_constraintEnd_toEndOf="parent"

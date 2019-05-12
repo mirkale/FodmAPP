@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E2E0"
     tools:context=".RecipesActivity">
 
     <Button
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
         android:onClick="toMain"
         android:text="ETUSIVU"
         app:layout_constraintEnd_toStartOf="@+id/toMyListButton"
@@ -23,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
         android:onClick="toMyList"
         android:text="OMA"
         app:layout_constraintEnd_toStartOf="@+id/toDiaryButton"
@@ -35,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
         android:onClick="toDiary"
         android:text="PVÄKIRJA"
         app:layout_constraintEnd_toEndOf="parent"

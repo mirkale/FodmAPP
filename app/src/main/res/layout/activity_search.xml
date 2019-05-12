@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE2E2E0"
     tools:context=".SearchActivity">
 
     <SearchView
@@ -11,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -23,6 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="338dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/addNewItemSearchActivityButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="18dp"
+        android:background="@color/colorPrimary"
         android:onClick="addToFodmapList"
         android:text="LISÄÄ"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +65,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="1dp"
+        android:background="@color/colorPrimary"
         android:onClick="toMain"
         android:text="ETUSIVU"
         app:layout_constraintEnd_toStartOf="@+id/toMyListSearcActivityButton"
@@ -70,9 +74,10 @@
 
     <Button
         android:id="@+id/toMyListSearcActivityButton"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
         android:onClick="toMyList"
         android:text="OMA LISTA"
         app:layout_constraintEnd_toStartOf="@+id/toDiarySearchActivityButton"
@@ -85,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimary"
         android:onClick="toDiary"
         android:text="PVÄKIRJA"
         app:layout_constraintEnd_toEndOf="parent"

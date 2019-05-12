@@ -76,14 +76,15 @@ public class EditMyListActivity extends AppCompatActivity {
 
     public void addNote(View v){
         TextView tvUp = findViewById(R.id.editMyListTextView); //tvUp = upper textview for fodmap item
-        TextView tvDown = findViewById(R.id.notesTextViewEditActivity); //tvDown= bottom textview for fodmap item NOTES
 
         String itemOnTextView = tvUp.getText().toString();
         int indexOfItem = MySelectedFodmaps.getInstance().getIndex(itemOnTextView); //checks the index of the item on screen
 
         EditText noteOnEditActivity = findViewById(R.id.editActivityEditTextSetNote);
         String userInputNote = noteOnEditActivity.getText().toString(); //retrieves the note user has written
+        TextView tvDown = findViewById(R.id.notesTextViewEditActivity); //tvDown= bottom textview for fodmap item NOTES
         tvDown.setText(userInputNote); //and sets it on the botton textview
+
         noteOnEditActivity.setText(""); //empties the plaintext field
 
         MySelectedFodmapsNotes.getInstance().addNote(indexOfItem, userInputNote); //adds the note to notes arraylist, with same index as the fodmap has on fodmap list
